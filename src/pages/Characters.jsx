@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CardGroup from 'react-bootstrap/CardGroup'
 import Container from 'react-bootstrap/Container'
 
 const Characters = () => {
 
   const [char, setChar] = useState([])
-  const [image, setImage] = useState('')
+  // const [image, setImage] = useState('')
 
   useEffect(() => {
     const getInfo = async () => {
@@ -26,29 +24,15 @@ const Characters = () => {
     setChar(data.results)
   }
 
-// function BasicExample() {
-//   return (
-//     <Card style={{ width: '18rem' }}>
-//       <Card.Img variant="top" src="holder.js/100px180" />
-//       <Card.Body>
-//         <Card.Title>Card Title</Card.Title>
-//         <Card.Text>
-//           Some quick example text to build on the card title and make up the
-//           bulk of the card's content.
-//         </Card.Text>
-//         <Button variant="primary">Go somewhere</Button>
-//       </Card.Body>
-//     </Card>
-//   );
-// }
-
   return (
     <>
-      <h1>Characters from Rick and Morty</h1>
-        <Row xs={1} md={2} className="g-4">
+      
+      <Container className='d-flex flex-column align-items-center  justify-content-around' >
+      <h1 className='text-center'>Characters from Rick and Morty</h1>
+        <Row xs={1} md={1} lg={2} xxl={3} className="g-5">
         {char.map((eachChar) => 
           <div key={eachChar.id}>
-            <Card border="primary" style={{ width: '26rem'}}>
+            <Card border="primary" style={{ width: '24rem'}}>
               <Card.Img src={eachChar.image} />
               <Card.Body>
               <Card.Title>{eachChar.name}</Card.Title>
@@ -64,6 +48,7 @@ const Characters = () => {
               </div>
         )}
         </Row>
+            </Container>
     </>
   )
 }

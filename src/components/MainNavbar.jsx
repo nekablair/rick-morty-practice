@@ -1,37 +1,26 @@
-// import React from 'react'
-import { Link } from "react-router-dom"
-// import Navbar from 'react-boostrap/Navbar'
-// import Row from 'react-bootstrap/Row'
-// import Col from 'react-bootstrap/Col'
+import React from 'react';
+// import Navbar from 'react-boostrap/Navbar';
+import Nav from 'react-boostrap/Nav';
+import Container from 'react-bootstrap/Container';
+// import Img from './src/assets/imgs/pic1.jpeg' /absolute path of img
 
 const MainNavbar = () => {
 
   return (
     <>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/characters">Characters</Link>
-      <Link to="/contact">Contact</Link>
+      {/* <Navbar bg='dark' expand='lg' className='bg-body-tertiary'> */}
+        <Container fluid>
+          {/* <Navbar.Brand > */}
+            {/* <img src={`https://rickandmortyapi.com/`} alt='alt-tag' /> */}
+          {/* </Navbar.Brand> */}
+          <Nav.Link to="/">Home</Nav.Link>
+          <Nav.Link to="/about">About</Nav.Link>
+          <Nav.Link to="/characters">Characters</Nav.Link>
+          <Nav.Link to="/contact">Contact</Nav.Link>
+        </Container>
+      {/* </Navbar> */}
     </>
   )
 }
-
-{/* <nav>
-          {/* <h1>Navbar</h1> */}
-        //   <ul>
-        //     <li>
-        //       <Link to="/">Home</Link>
-        //     </li>
-        //     <li>
-        //       <Link to="/about">About</Link>
-        //     </li>
-        //     <li>
-        //       <Link to="/characters">Characters</Link>
-        //     </li>
-        //     <li>
-        //       <Link to="/contact">Contact</Link>
-        //     </li>
-        //   </ul>
-        // </nav> */}
 
 export default MainNavbar
