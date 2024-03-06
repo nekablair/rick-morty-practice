@@ -15,12 +15,14 @@ const About = () => {
     const data = await res.json()
     console.log(data)
     setResult(data)
+    // console.log(data)
   }
 
   return (
     <>
-      <h1>About</h1>
-      {/* {result.map((eachChar) => <li key={eachChar.id}>{eachChar.name}</li>)} */}
+      <h1>About Ricky and Morty</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, sapiente ducimus. Earum illo in nostrum, facilis possimus animi exercitationem iure iusto, delectus culpa aliquid, esse illum sint. Aspernatur, voluptate voluptatibus.
+      </p>
     </>
   )
 }

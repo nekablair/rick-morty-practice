@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Characters = () => {
 
@@ -20,10 +21,20 @@ const Characters = () => {
 
   return (
     <>
-      <div>Characters</div>
-      <ul>
-          {char.map((eachChar) => <li key={eachChar.id}>{eachChar.name}</li>)}
-      </ul>
+      <h1>Characters from Rick and Morty</h1>
+          {char.map((eachChar) => 
+          <div key={eachChar.id}>
+              <h6>{eachChar.name}</h6>
+              <p>
+              {eachChar.status}
+              </p>
+              <p>
+              {eachChar.gender}
+              </p>
+              <img src={eachChar.image} />
+              <Link to={eachChar.url} />
+              </div>
+        )}
     </>
   )
 }
