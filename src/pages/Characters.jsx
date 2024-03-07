@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container'
+import CharCard from '../components/CharCard';
+
+// import Row from 'react-bootstrap/Row';
+// import Container from 'react-bootstrap/Container'
 import axios from 'axios'
 
 const Characters = () => {
@@ -66,26 +67,10 @@ const Characters = () => {
       {/* <Container className='d-flex flex-column p-5 d-flex' >
       // <h1 className='text-center p-4'>Characters from Rick and Morty</h1>
   <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3"> */}
-
-        {/* {char.map((eachChar) => (
-          <div key={eachChar.id}>
-            <Card border="primary" style={{ width: 'auto'}}>
-              <Card.Img src={eachChar.image} />
-              <Card.Body>
-              <Card.Title>{eachChar.name}</Card.Title>
-              <Card.Text>
-              {eachChar.status} <br />
-              {eachChar.species} <br />
-              {eachChar.gender}
-              </Card.Text>
-              <Link to='character'><Button variant="primary">Find Out More</Button></Link>
-                
-              </Card.Body>
-              </Card>
-              </div>)
-        )} */}
-
-        {/* </Row> */}
+        {char.map((c) => (
+          <CharCard key={c.id} name={c.name} image={c.image}/>
+        ))}
+        
         {/* <button onClick={changePage}>Next Page</button> */}
             {/* </Container> */}
             {/* <button onClick={changePage}>Next Page</button> */}
