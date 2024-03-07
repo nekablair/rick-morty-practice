@@ -12,56 +12,62 @@ const Characters = () => {
   const [pages, setPages] = useState(1)
   // const [image, setImage] = useState('')
 
-  // useEffect(() => {
-  //   const getInfo = async () => {
-  //   await fetchInfo()
-  //   // const infoFromApi = await fetchInfo()
-  //   }
-  //   getInfo()
-  // }, [setChar])
-
-  // const fetchInfo = async () => {
-  //   try {
-  //     const res = await axios.get("https://rickandmortyapi.com/api/character")
-  //     // const data = await res.json()
-  //     // console.log(data.results)
-  //     // setChar(data.results)
-  //     console.log(res.data.results)
-  //     const data = res.data.results
-  //     setChar(data)
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // }
-
-
-  const changePage = async(pages) => {
+  const fetchInfo = async () => {
     try {
-      const res = await axios.get(`https://rickandmortyapi.com/api/?page=${pages}`)
-      console.log(res.data.info)
-      setChar([ ...pages, res.data.results])
+      const res = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pages}`)
+      // const data = await res.json()
+      // console.log(data.results)
+      // setChar(data.results)
+      console.log(res.data.results)
+      const data = res.data.results
+      setChar([...char, data])
       setPages(pages+1)
     } catch (error) {
       console.error(error)
     }
   }
 
-  
   useEffect(() => {
-      changePage()
-    }, [setPages])
+    if (pages < 10){
+      fetchInfo()
+    }
+  }, [pages])
 
   useEffect(() => {
     console.log(char)
   }, [char])
 
+  // fetchInfo()
+
+
+  // const changePage = async(pages) => {
+  //   // try {
+  //     const res = await axios.get(`https://rickandmortyapi.com/api/?page=${pages}`)
+  //     console.log(res.data.results)
+      // setChar([ ...char, res.data.results])
+      // setPages(pages+1)
+    // } catch (error) {
+    //   console.error(error)
+    // }
+  // }
+
+  
+  // useEffect(() => {
+  //     changePage()
+  //   }, [pages])
+
+  // useEffect(() => {
+  //   console.log(char)
+  // }, [char])
+
   return (
     <>
-      
-      <Container className='d-flex flex-column p-5 d-flex' >
       <h1 className='text-center p-4'>Characters from Rick and Morty</h1>
-        <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3">
-        {char.map((eachChar) => (
+      {/* <Container className='d-flex flex-column p-5 d-flex' >
+      // <h1 className='text-center p-4'>Characters from Rick and Morty</h1>
+  <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3"> */}
+
+        {/* {char.map((eachChar) => (
           <div key={eachChar.id}>
             <Card border="primary" style={{ width: 'auto'}}>
               <Card.Img src={eachChar.image} />
@@ -77,10 +83,11 @@ const Characters = () => {
               </Card.Body>
               </Card>
               </div>)
-        )}
-        </Row>
+        )} */}
+
+        {/* </Row> */}
         {/* <button onClick={changePage}>Next Page</button> */}
-            </Container>
+            {/* </Container> */}
             {/* <button onClick={changePage}>Next Page</button> */}
     </>
   )
