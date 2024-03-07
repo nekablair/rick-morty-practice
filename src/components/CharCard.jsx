@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types'
 
 
 const CharCard = ( { name, image }) => {
@@ -29,7 +30,7 @@ const CharCard = ( { name, image }) => {
             {/* {eachChar.gender} */}
             {/* </Card.Text> */}
             {/* <Link to='character'><Button variant="primary">Find Out More</Button></Link> */}
-            <Button variant="primary" onClick={getDetails}>Get Details</Button>
+            <Link to={'/character'}><Button variant="primary" onClick={getDetails}>Get Details</Button></Link>
             </Card.Body>
         </Card>
             {/* </div> */}
@@ -38,5 +39,6 @@ const CharCard = ( { name, image }) => {
       </>
   )
 }
+//may need to use prop types here...
 
 export default CharCard
