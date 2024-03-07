@@ -9,36 +9,59 @@ import axios from 'axios'
 const Characters = () => {
 
   const [char, setChar] = useState([])
+  const [pages, setPages] = useState(1)
   // const [image, setImage] = useState('')
 
-  useEffect(() => {
-    const getInfo = async () => {
-    const infoFromApi = await fetchInfo()
-    }
-    getInfo()
-  }, [setChar])
+  // useEffect(() => {
+  //   const getInfo = async () => {
+  //   await fetchInfo()
+  //   // const infoFromApi = await fetchInfo()
+  //   }
+  //   getInfo()
+  // }, [setChar])
 
-  const fetchInfo = async () => {
+  // const fetchInfo = async () => {
+  //   try {
+  //     const res = await axios.get("https://rickandmortyapi.com/api/character")
+  //     // const data = await res.json()
+  //     // console.log(data.results)
+  //     // setChar(data.results)
+  //     console.log(res.data.results)
+  //     const data = res.data.results
+  //     setChar(data)
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
+
+
+  const changePage = async(pages) => {
     try {
-      const res = await axios.get("https://rickandmortyapi.com/api/character")
-      // const data = await res.json()
-      // console.log(data.results)
-      // setChar(data.results)
-      console.log(res.data.results)
-      const data = res.data.results
-      setChar(data)
+      const res = await axios.get(`https://rickandmortyapi.com/api/?page=${pages}`)
+      console.log(res.data.info)
+      setChar([ ...pages, res.data.results])
+      setPages(pages+1)
     } catch (error) {
       console.error(error)
     }
   }
 
+  
+  useEffect(() => {
+      changePage()
+    }, [setPages])
+
+  useEffect(() => {
+    console.log(char)
+  }, [char])
+
   return (
     <>
       
       <Container className='d-flex flex-column p-5 d-flex' >
-      <h1 className='text-center'>Characters from Rick and Morty</h1>
-        <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center">
-        {char.map((eachChar) => 
+      <h1 className='text-center p-4'>Characters from Rick and Morty</h1>
+        <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3">
+        {char.map((eachChar) => (
           <div key={eachChar.id}>
             <Card border="primary" style={{ width: 'auto'}}>
               <Card.Img src={eachChar.image} />
@@ -49,14 +72,16 @@ const Characters = () => {
               {eachChar.species} <br />
               {eachChar.gender}
               </Card.Text>
-              {/* <Button variant="primary" onClick={() =>  <Link to={eachChar.url}></Link> }>Visit {eachChar.name}</Button> */}
+              <Link to='character'><Button variant="primary">Find Out More</Button></Link>
                 
               </Card.Body>
               </Card>
-              </div>
+              </div>)
         )}
         </Row>
+        {/* <button onClick={changePage}>Next Page</button> */}
             </Container>
+            {/* <button onClick={changePage}>Next Page</button> */}
     </>
   )
 }
