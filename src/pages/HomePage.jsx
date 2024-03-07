@@ -12,7 +12,7 @@ const HomePage = () => {
 
         {/* <Image src='./assets/rickmorty.jpeg' fluid /> */}
         {/* <h1 className="display-4">HomePage</h1> */}
-        <h1 className="display-1 p-4 fw-bold">
+        <h1 data-testid="cypress-title" className="display-1 p-4 fw-bold">
           Watch Rick and Morty <br /><a href="https://rickandmortyapi.com/"   target="blank">Here!</a>
         </h1>
         <a href="https://rickandmortyapi.com/" target="blank"><Image src={`${AImage}`} fluid className="pt-3 shadow-lg image-zoom" /></a>

@@ -14,7 +14,7 @@ function App() {
     <>
       {/* <MainNavbar /> */}
       {/* <NavHead />*/}
-      <Navbar expand='lg' bg='dark' data-bs-theme='dark' className='bg-body-tertiary p-3' >
+      <Navbar data-testnavbar="cypress-navbar" expand='lg' bg='dark' data-bs-theme='dark' className='bg-body-tertiary p-3' >
         <Container id='nav-container'>
         <Navbar.Brand href="https://rickandmortyapi.com/" target="blank">Rick & Morty</Navbar.Brand>
         <Link to='/'>Home</Link>
