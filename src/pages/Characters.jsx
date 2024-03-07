@@ -49,7 +49,7 @@ const Characters = () => {
               {eachChar.species} <br />
               {eachChar.gender}
               </Card.Text>
-              <Button variant="primary" onClick={() =>  <Link to={eachChar.url}></Link> }>Visit {eachChar.name}</Button>
+              {/* <Button variant="primary" onClick={() =>  <Link to={eachChar.url}></Link> }>Visit {eachChar.name}</Button> */}
                 
               </Card.Body>
               </Card>
