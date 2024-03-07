@@ -1,0 +1,13 @@
+/* .image-zoom {
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+} */
+
+.image-zoom:hover {
+    transform: scale(1.25);
+}
+
+img {
+    cursor: pointer;
+}

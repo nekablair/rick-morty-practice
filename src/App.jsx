@@ -14,13 +14,13 @@ function App() {
     <>
       {/* <MainNavbar /> */}
       {/* <NavHead />*/}
-      <Navbar expand='lg' bg='dark' data-bs-theme='dark' className='bg-body-tertiary' >
+      <Navbar expand='lg' bg='dark' data-bs-theme='dark' className='bg-body-tertiary p-3' >
         <Container id='nav-container'>
         <Navbar.Brand href="https://rickandmortyapi.com/" target="blank">Rick & Morty</Navbar.Brand>
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
         <Link to='/characters'>Characters</Link>
-        <Link to='/contact'>Contact</Link>
+        {/* <Link to='/contact'>Contact</Link> */}
         </Container>
       </Navbar>
       <Outlet />
