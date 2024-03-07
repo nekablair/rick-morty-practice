@@ -20,7 +20,7 @@ const Characters = () => {
       // setChar(data.results)
       console.log(res.data.results)
       const data = res.data.results
-      setChar([...char, data])
+      setChar([...char, ...data]) //one request of all the characters in one array
       setPages(pages+1)
     } catch (error) {
       console.error(error)
