@@ -7,6 +7,11 @@ import './App.css'
 
 function App() {
 
+  const contextCard = {
+    favorites,
+    addToFavorites
+  }
+
   return (
     <>
       <MainNavbar />
@@ -20,7 +25,7 @@ function App() {
         {/* <Link to='/contact'>Contact</Link> */}
         {/* </Container> */}
 
-      <Outlet />
+      <Outlet context={contextCard} />
     </>
   )
 }

@@ -1,15 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useOutletContext } from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types'
 
 
-const CharCard = ( { name, image }) => {
-
+const CharCard = ( { id, name, image }) => {
+    const navigate = useNavigate();
+    const { addToFavorites} = useOutletContext()//->you can use this in any component
+    
 
     const getDetails = () => {
         console.log("click")
+    }
+
+    const getACharacter = () => {
+
     }
 
   return (
@@ -30,7 +36,7 @@ const CharCard = ( { name, image }) => {
             {/* {eachChar.gender} */}
             {/* </Card.Text> */}
             {/* <Link to='character'><Button variant="primary">Find Out More</Button></Link> */}
-            <Link to={'/character'}><Button variant="primary" onClick={getDetails}>Get Details</Button></Link>
+            <Link to={`/character/${id}`}><Button variant="primary">Get Details</Button></Link>
             </Card.Body>
         </Card>
             {/* </div> */}

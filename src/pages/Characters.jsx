@@ -68,7 +68,7 @@ const Characters = () => {
       // <h1 className='text-center p-4'>Characters from Rick and Morty</h1>
   <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3"> */}
         {char.map((c) => (
-          <CharCard key={c.id} name={c.name} image={c.image}/>
+          <CharCard key={c.id} id={c.id} name={c.name} image={c.image}/>
         ))}
         
         {/* <button onClick={changePage}>Next Page</button> */}
