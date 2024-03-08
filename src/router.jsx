@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
+import Favorites from "./pages/Favorites";
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
         {
           path: "character/:id",
           element: <Character />
-      }
+        },
+        {
+          path: "favorites/",
+          element: <Favorites />
+        },
       ],
       errorElement: <NotFound />
     },

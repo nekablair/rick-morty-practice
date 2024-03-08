@@ -8,8 +8,8 @@ import './App.css'
 function App() {
 
   const contextCard = {
-    favorites,
-    addToFavorites
+    // favorites,
+    // addToFavorites
   }
 
   return (

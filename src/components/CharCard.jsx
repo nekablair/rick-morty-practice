@@ -3,6 +3,8 @@ import { Link, useNavigate, useOutletContext } from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 
 const CharCard = ( { id, name, image }) => {
@@ -10,20 +12,20 @@ const CharCard = ( { id, name, image }) => {
     const { addToFavorites} = useOutletContext()//->you can use this in any component
     
 
-    const getDetails = () => {
-        console.log("click")
-    }
+    // const getDetails = () => {
+    //     console.log("click")
+    // }
 
-    const getACharacter = () => {
+    // const getACharacter = () => {
 
-    }
+    // }
 
   return (
     <>
-    <div>CharCard</div>
-    {/* <Container className='d-flex flex-column p-5 d-flex' >
-      // <h1 className='text-center p-4'>Characters from Rick and Morty</h1>
-    <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3"> */}
+    {/* <div>CharCard</div> */}
+    {/* <h1 className='text-center p-4'>Characters from Rick and Morty</h1> */}
+    {/* <Container className='d-flex flex-column p-5 d-flex' > */}
+    {/* <Row xs={1} md={1} lg={2} xxl={3} className="g-5 align-items-center p-3"> */}
     {/* {char.map((eachChar) => ( */}
         {/* <div key={eachChar.id}> */}
         <Card border="primary" style={{ width: 'auto'}}>
@@ -37,11 +39,14 @@ const CharCard = ( { id, name, image }) => {
             {/* </Card.Text> */}
             {/* <Link to='character'><Button variant="primary">Find Out More</Button></Link> */}
             <Link to={`/character/${id}`}><Button variant="primary">Get Details</Button></Link>
+            <Link to={'/favorites'}><Button variant="warning">Favorites</Button></Link>
             </Card.Body>
         </Card>
+    {/* </Row> */}
+    {/* </Container> */}
             {/* </div> */}
             {/* ) */}
-      {/* )} */}
+       {/* ) */}
       </>
   )
 }
